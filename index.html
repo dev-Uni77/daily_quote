@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Daily Quote</title>
+</head>
+<body>
+    <div class="quote-box">
+        <h2>Quote of the day</h2>
+
+        <blockquote id="quote">Loading... </blockquote>
+        <span id="author">Loading...</span>
+        <div>
+            <button onclick="getquote(api_url)">New Quote</button>
+            <button onclick="openNewWindow()"><img src="twitter.png" alt="">Tweet</button>
+        </div>
+    </div>
+    <script>
+        const quote= document.getElementById("quote")
+        const author= document.getElementById("author")
+
+        const api_url = "https://api.quotable.io/random";
+
+        async function getquote(url){
+            const response = await fetch(url);
+            var data = await response.json();
+
+            quote.innerHTML = data.content;
+            author.innerHTML = data.author;
+        }
+        
+        getquote(api_url);
+        
+        // function tweet() {
+        //     // window.open("https://twitter.com/intent/tweet?text="+ quote.innerHTML + "---- by"+ author.innerHTML,"Tweet Window","winth=600, height=300")
+        //     window.open("//notepad.exe="+ quote.innerHTML + "---- by"+ author.innerHTML,"Tweet Window","winth=600, height=300")
+
+        // }
+
+        function openNewWindow() {
+        // 새로운 창을 엽니다.
+        var newWindow = window.open("", "New Window", "width=600,height=300");
+
+        // 새로운 창의 문서에 내용을 작성합니다.
+        newWindow.document.write("<html><head><title>The quote of today</title></head><body>");
+        newWindow.document.write("<h1>Instead of twitter...</h1>");
+        newWindow.document.write("<p>" +quote.innerHTML + "---- by "+ author.innerHTML+ "</p>");
+        newWindow.document.write("</body></html>");
+    }
+
+
+    </script>
+</body>
+</html>
