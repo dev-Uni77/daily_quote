@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Poiret+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Delius", serif;
+}
+
+body {
+  /* min-height: 100vh;
+    margin: 0%;
+    
+    font-weight: 700; */
+  background-color: #f1eff5;
+  /* text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Montserrat, sans-serif; */
+  /* background-color: #efe4ff; */
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V0C4.477 0 0 4.477 0 10v30zm22 0c-5.523 0-10-4.477-10-10V0c5.523 0 10 4.477 10 10v30z' fill='%23280e51' fill-opacity='0.24' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.quote-box {
+  background: rgba(255,255,255,0.3);
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 10px 10px 20px 0 rgba(0, 0, 0, 0.3);/* 오른쪽과 아래에만 그림자 */
+}
+
+.quote-box h2{
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.quote-box h2::after{
+    content:'';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;;
+    background: rgb(23,124,229);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%)
+
+}
+
+.quote-box blockquote {
+    font-size: 26px;
+    min-height: 110px;
+
+}
+
+.quote-box blockquote::before, .quote-box blockquote::after {
+    content:'"';
+}
+
+.quote-box span{
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+
+.quote-box span::before {
+    content: '';
+    width:20px;
+    height: 2px;
+    background: rgb(23,124,229);
+    position: absolute;
+    top: 50%;
+    left: -30px;
+
+}
+
+.quote-box div {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.quote-box button{
+    background: rgb(23,124,229);
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid rgb(23, 123, 229);
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.quote-box button img{
+    height: 48px;
+    /* width: 20px; */
+    margin-right: 10px;
+    opacity: 0.65; /* 이미지 투명도 설정 */
+
+}
+
+.quote-box button:nth-child(2) {
+    background: transparent;
+    color: #333
+}
